@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  permalink: MyString
+  content: MyText
+  position: 1
+  handled_by_controller: false
+  home_page: false
+
+two:
+  name: MyString
+  permalink: MyString
+  content: MyText
+  position: 1
+  handled_by_controller: false
+  home_page: false

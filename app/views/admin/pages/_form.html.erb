@@ -1,0 +1,31 @@
+<% form_for(@page) do |f| %>
+  <%= f.error_messages %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :permalink %><br />
+    <%= f.text_field :permalink %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </div>
+  <div class="field">
+    <%= f.label :position %><br />
+    <%= f.text_field :position %>
+  </div>
+  <div class="field">
+    <%= f.label :handled_by_controller %><br />
+    <%= f.check_box :handled_by_controller %>
+  </div>
+  <div class="field">
+    <%= f.label :home_page %><br />
+    <%= f.check_box :home_page %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
