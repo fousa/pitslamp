@@ -1,0 +1,52 @@
+/*
+ *  ie6 fix
+ *
+ * Created by  on 2008-01-22.
+ * Copyright (c) 2008 Statik. All rights reserved.
+ */
+#content #content_primary{
+	padding: 5px 10px 5px 40px;
+	line-height: 1.2em;
+	margin-left: 0px;
+	width: 505px;
+	float: left;
+	margin-left: 18px;
+}
+
+#content #content_primary .J_NewsItem ul li span.files span.button, #content #content_primary #news .newsItem ul.newsAttachments li {
+	width: 40px;
+}
+
+#content #content_primary h2:first-letter {
+	color: #ffffff;
+	text-transform: uppercase;
+	padding-right: 2px;
+}
+
+#site_info {
+	height: 250px !important;
+	font-size: 1.0em;
+	background: url('../images/background_footer.jpg') 0px -20px no-repeat #ffffff;
+}
+
+#site_info h4.silver {
+	margin-top: 0px;
+}
+
+#site_info div.sponsors a.novozymes {
+	margin-left: 40px;
+}
+
+#site_info div.vcard{
+	margin-top: 20px;
+	height: 30px;
+}
+
+body.page #site_info {
+	
+	padding: 3px 50px 0px 80px;
+	height: 60px !important;
+	overflow:hidden;
+	position: relative;
+	background: url('../images/background_footer.jpg') 0px -270px no-repeat #ffffff;
+}

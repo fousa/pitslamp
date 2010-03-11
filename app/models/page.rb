@@ -1,6 +1,7 @@
 class Page < ActiveRecord::Base
 
-  scope :active, where(:active => true)
+  scope :ordered, order("position ASC")
+  scope :active,  ordered.where(:active => true)
 
   def self.home_page
     active.where(:home_page => true).first

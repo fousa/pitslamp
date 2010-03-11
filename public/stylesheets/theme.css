@@ -1,0 +1,358 @@
+/* @override 
+	http://localhost:3000/stylesheets/theme.css?1264803161
+	http://localhost:3000/stylesheets/theme.css?1265196076
+*/
+
+@import url('reset.css');
+@import url('joppa.css');
+
+/* @group global layout */
+
+html,body { height:100%; }
+
+body{
+	background: url('../images/background_1024_bottom.png') no-repeat center bottom fixed;
+}
+
+
+#backgroundcontainer {
+	height: 100%;
+	margin-top: 0px;
+	background: url('../images/background_1024_top.png') no-repeat center top fixed;
+}
+	
+
+/* @end */
+
+/* @group layout */
+
+	#container {
+	width: 955px;
+	padding: 50px 0px 0px 0px;
+	margin: 0px auto;
+	}
+	
+	
+/* @end */
+
+/* @group header */
+
+	#branding {
+		height: 109px;
+		width: 230px;
+		float: left;
+		padding: 10px 10px 0px 10px;
+		background: url('../images/logo_pitslamp.png');
+	}
+	
+	#branding h1 a{
+		height: 105px;
+		width: 230px;
+		display: block;
+		text-indent: -9999px;
+		overflow: hidden;
+	}
+	
+	#optional {
+		clear: left;
+		float: left;
+		margin: 153px 0px 0px -10px;
+		width: 220px;
+		height: 173px;
+		padding: 0px 0px 0px 30px;
+		background: url('../images/menu_bar.png');
+	}
+	
+	#optional .vcard {
+		margin-top: 60px;
+		font: 14px georgia;
+		color: #fff;
+	}
+	
+	#optional .vcard a {
+		color: #fff;
+		text-decoration: none;
+	}
+	
+	#optional .vcard .org {
+		text-transform: uppercase;
+	}
+	
+	#optional .vcard .adr {
+		font-style: italic;
+	}
+	
+	#optional .vcard .tel_block {
+		margin-top: 18px;
+		font: bold 14px Arial;
+	}
+	
+	#optional .vcard .mail_label, #optional .vcard .email {
+		display: none;
+	}
+	
+	
+	
+
+/* @end */
+
+/* @group nav lists */
+
+	#navigation {
+		float: left;
+		margin-left: -250px;
+		margin-top: 118px;
+		
+	}
+	
+	/* @group nav_primary */
+		
+		#nav_primary li {
+			display: block;
+			width: 250px;
+			height: 30px;
+			padding: 0px;
+			
+		}
+		
+		#nav_primary li a {
+			font: 16px georgia, verdana;
+			text-transform: uppercase;
+			color: #fff;
+			text-decoration: none;
+			display: block;
+			width: 220px;
+			height: 25px;
+			padding: 5px 0px 0px 30px;
+			background: url('../images/menu_item.png') top left;
+		}
+	
+	/* @end */
+	
+	/* @group navigation hover, selected */
+	
+	#nav_primary li a:hover, #nav_primary li.selected a {
+			background: url('../images/menu_item.png') bottom left;
+		}
+	
+	/* @end */
+	
+/* @end */
+
+/* @group content */
+
+	#content {
+		width: 700px;
+		height: 501px;
+		float: left;
+		margin-top: -5px;
+	}
+	
+	/* @group content_primary */
+	
+		/* @group Slideshow */
+		
+		a.play {
+			display: none; 
+		}
+		
+		a.advance-link {
+			height: 500px;
+			width: auto;
+			display: block;
+			text-decoration: none;
+		}
+		
+		.advance-link img{
+			height: 500px;
+			display: block;
+		}
+		
+		#thumbs ul.thumbs{
+			display: none;
+		}
+		
+		
+		#control {
+			width: 250px;
+			height: 42px;
+			display: block;
+			margin-left: -240px;
+			margin-top: -25px;
+			
+		}
+		
+		#control #controls_info {
+			width: 150px;
+			float: left;
+			height: 42px;
+			display: block;
+			padding-top: 8px;
+			color: #dfdfdf;
+			font: 11px Arial;
+}
+		
+		
+		#control #controls .nav-controls a.prev {
+			height: 42px;
+			width: 42px;
+			display: block;
+			background: url('../images/previous_arrow.png') top left;
+			text-indent:  -9999px;
+			float: left;
+		}
+		
+		#control #controls .nav-controls a.next {
+			height: 42px;
+			width: 42px;
+			display: block;
+			background: url('../images/next_arrow.png') top left;
+			text-indent:  -9999px;
+			float: left;
+		}
+		
+		#control #controls .nav-controls a:hover {
+			background-position: bottom left;
+		}
+		
+		.image-wrapper{
+			display:block;
+			width: 750px;
+			height: 500px;
+		}
+		
+		/* @end */
+		
+		/* @group text-content */
+		
+		#text_top {
+			margin-top: 13px;
+			width: 713px;
+			height: 6px;
+			background: url('../images/top_border_text.png') top left no-repeat;
+			background-color: transparent;
+		}
+		
+		#text_content {
+			width: 613px;
+			padding: 35px 40px 35px 60px;
+			background: url('../images/middle_border_text.png') top left repeat-y;
+			background-color: transparent;
+			min-height: 400px;
+		}
+		
+		#text_bottom {
+			width: 713px;
+			height: 6px;
+			background: url('../images/bottom_border_text.png') top left no-repeat;
+			background-color: transparent;
+		}
+		
+		#text_content h3 {
+			font: 26px Georgia;
+			margin-left: -20px;
+		}
+		
+		
+		
+		/* @end */
+		
+		/* @group forms */
+		#content #content_primary label {
+			clear: both;
+			width: 80px;
+			margin-bottom: 5px;
+			font: 15px Arial;
+			color: #686c6a;
+			font-weight: bolder;
+			text-align: right;
+		}
+		
+		#content #content_primary input[type=text], #content #content_primary input[type=password] {
+			background: url('../images/background_input.png') no-repeat;
+			border: 0;
+			height: 19px;
+			width: 187px;
+			padding: 2px 5px 2px 5px;
+			color:  #505050;
+			margin: 0px 0px 10px 10px;
+			float: left;
+			color: #343936;
+			font: 14px Arial;
+			font-weight: bolder;
+		}
+		
+		#content #content_primary input[type=submit] {
+			background: url('../images/button.png') no-repeat;
+			border: none;
+			width: 102px;
+			height: 22px;
+			margin-top: 5px;
+			margin-left: 90px;
+			font: 15px Arial;
+			color: #686c6a;
+			font-weight: bolder;
+		}
+		
+		#content #content_primary textarea {
+			background: url('../images/background_textarea.png') no-repeat;
+			border: 0px;
+			width: 496px;
+			height: 142px;
+			padding: 5px 5px 5px 5px;
+			margin: 0px 0px 10px 10px;
+			color: #343936;
+			font: 14px Arial;
+		}
+
+		/* @end */
+		
+		/* @group blog */
+		
+		div.post h3 {
+			font: 26px Georgia;
+			margin-left: -20px;
+			color: #373737;
+		}
+		
+		div.post h3 a {
+			text-decoration: none;
+			color: #000;
+		}
+		
+		div.post h3 span.created {
+			font: 14px Georgia;
+			color: #909090;
+			display: block;
+			text-transform: uppercase;
+		}
+		
+		div.post p {
+			font:  14px Georgia;
+			color: #373737;
+		}
+		
+		/* @end */
+		
+		/* @group admin */
+		
+		
+		/* @end */
+		
+	/* @end */
+
+	/* @group content_secondary */
+	
+	/* @end */
+
+/* @end */
+/* @group site info */
+	
+	#site_info {
+		display: none;
+	}
+	
+/* @end */
+
+/* @group extra */
+/* @end */

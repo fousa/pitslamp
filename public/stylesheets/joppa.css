@@ -1,0 +1,194 @@
+/* @override http://h-w.statik.be/themes/huart_and_watson/styles/joppa.css */
+
+/* @group joppa specific */
+
+/* @comments */
+
+.comments {
+	font-family: arial;
+	font-size: 0.9em;
+}
+
+.comments h3 {
+	font-size: 1.4em;
+	color: #bda343;
+	padding-bottom: 15px;
+	padding-top: 20px;
+}
+
+.comments .captcha img {
+	display: block;
+	padding-left: 130px;
+}
+
+.comments #formCommentEmail, .comments #formCommentName {
+	width: 300px;
+	float: left;
+}
+
+.comments #formCommentMessage {
+	width: 300px;
+}
+
+.comment  {
+	padding-bottom: 10px;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+.comment .info, .comment .links {
+	clear: both;
+	width: 530px;
+	margin-top: 10px;
+	color: #999;
+}
+
+.comment .info .date {
+	width: 130px;
+	float: left;
+}
+
+.comment .info .author {
+	width: 400px;
+	float: left;
+}
+
+.comment .message {
+	clear: both;
+	width: 350px;
+	padding-left: 130px;
+	display: block;
+}
+
+.comment .links {
+	margin-left: 130px;
+}
+
+#comments {
+	font-size: 0.9em;
+}
+
+/* @end */
+
+/* @group form */
+
+form div {
+	clear:both;
+}
+
+form label {
+	width: 130px;
+	float:left;
+}
+
+/* @end*/
+
+/* @group contact form */
+
+.formContact {
+	clear: both;
+}
+
+.formContact div {
+	margin-bottom: 3px;
+}
+
+.formContact textarea {
+	height: 100px;
+	width: 400px;
+}
+
+.formContact .submit {
+	margin-left: 65px;
+}
+
+/* @end */
+
+/* @group Messages */
+
+#joppaErrorMessages {
+	border: 1px solid #E57D64;
+	background-color: #F6D5CB;
+	color: #F6212C;
+	padding: 5px;
+	width: 350px;
+	min-width: 300px;
+	margin-bottom: 10px;
+}
+
+#joppaInformationMessages {
+	border: 1px solid #6ADA1D;
+	background-color: #D2F2B7;
+	color: #569D23;
+	padding: 5px;
+	width: 350px;
+	min-width: 300px;
+	margin-bottom: 10px;
+}
+
+/* @end */
+
+/* @group Google maps */
+
+.googleMap {
+	width: 500px; 
+	height: 300px;
+	margin-bottom: 20px;
+}
+
+/* @end */
+
+/* @group search */
+
+div.results {
+	margin-top: 10px;
+}
+
+ul.results {
+	margin-top: 10px;
+}
+
+#searchResults {
+	margin-top: 10px;
+}
+
+ul.results li {
+	list-style-type: square;
+}
+.query {
+	float: left;
+	width: 150px;
+	padding-right: 15px;
+	margin-bottom: 10px;
+}
+
+.query label {
+	margin-bottom: 5px;
+}
+
+#content #content_primary #formSearch .submit {
+	float: left;
+	margin-top: 13px;
+	padding: 0px;
+	width: 5em;
+}
+
+/* @end */
+
+/* @group Table lay-out */
+
+#content #content_primary table {
+	border: 1px solid #999999;
+}
+
+#content #content_primary table td{
+	padding: 2px 5px;
+	border: 1px solid #999999;
+}
+
+/* @end */
+
+br.clear {
+	clear: both;
+	height: 0px;
+	margin-top: -1em;
+}

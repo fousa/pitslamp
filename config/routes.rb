@@ -5,6 +5,7 @@ Pitslamp::Application.routes.draw do |map|
     resources :posts
   end
 
+  resources :posts,     :as => "blog"
   resources :portfolio, :as => "portfolio"
   resources :contacts,  :as => "contact"
 
