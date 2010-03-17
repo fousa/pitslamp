@@ -4,7 +4,7 @@ class SiteController < ApplicationController
     @page = Page.home_page
     initialize_page
 
-    raise "This page is controller driven!" if @page.handled_by_controller?
+    redirect_to "/#{@page.permalink}" if  @page.handled_by_controller?
   end
 
   def show

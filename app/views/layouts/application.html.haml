@@ -12,7 +12,8 @@
 
     = auto_discovery_link_tag :rss, posts_url(:format => :rss)
 
-    = javascript_include_tag :defaults
+    = javascript_include_tag "jquery"
+    = javascript_include_tag "jquery-ui"
     = javascript_include_tag "jquery.galleriffic"
     = javascript_include_tag "builder"
 
@@ -43,7 +44,7 @@
         #navigation
           %ul#nav_primary{ :class => @page ? @page.permalink : "" }
             - Page.active.each do |page|
-              %li{ :id => page.permalink, :class => @selected_page == page.permalink ? "selected" : "" }= link_to page.menu_title, page.permalink, :class => @selected_page == page.permalink ? "selected" : ""
+              %li{ :id => page.permalink, :class => @selected_page == page.permalink ? "selected" : "" }= link_to page.menu_title, "/#{page.permalink}", :class => @selected_page == page.permalink ? "selected" : ""
         #content
           #content_primary
             - if flash[:notice]

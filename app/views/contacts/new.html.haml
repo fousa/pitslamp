@@ -1,0 +1,21 @@
+#text_top
+#text_content
+  %h3 Contact
+  - form_for @contact, :class => "feedback" do |form|
+    = form.label :email, "E-mail"
+    = form.text_field :email
+
+    = form.label :name, "Naam"
+    = form.text_field :name
+
+    = form.label :spam_check, "1 + 1 = ?"
+    = form.text_field :spam_check
+
+    = form.label :subject, "Onderwerp"
+    = form.text_field :subject
+
+    = form.label :content, "Bericht"
+    = form.text_area :content
+
+    = form.submit "Verzenden"
+#text_bottom
