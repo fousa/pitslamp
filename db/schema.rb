@@ -9,7 +9,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100311145216) do
+ActiveRecord::Schema.define(:version => 20100320142642) do
+
+  create_table "comments", :force => true do |t|
+    t.integer  "post_id"
+    t.boolean  "approved"
+    t.string   "referrer"
+    t.string   "user_agent"
+    t.string   "user_ip"
+    t.string   "url"
+    t.string   "email"
+    t.string   "author"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "pages", :force => true do |t|
     t.string   "menu_title"
@@ -20,6 +34,12 @@ ActiveRecord::Schema.define(:version => 20100311145216) do
     t.boolean  "handled_by_controller"
     t.boolean  "home_page"
     t.boolean  "active"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pictures", :force => true do |t|
+    t.string   "set_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

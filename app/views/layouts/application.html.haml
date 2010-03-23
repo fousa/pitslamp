@@ -15,14 +15,17 @@
     = javascript_include_tag "jquery"
     = javascript_include_tag "jquery-ui"
     = javascript_include_tag "jquery.galleriffic"
-    = javascript_include_tag "builder"
+    = javascript_include_tag "rails"
 
     = stylesheet_link_tag "theme"
     = stylesheet_link_tag "gallery"
+    = stylesheet_link_tag "sort"
     /[if gte IE 7]
       = stylesheet_link_tag "theme.ie"
 
-  %body#index{ :onload => "document.observe()" }
+    = csrf_meta_tag
+
+  %body#index
     #backgroundcontainer
       #container
         #branding

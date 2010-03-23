@@ -1,5 +1,4 @@
 class SiteController < ApplicationController
-
   def index
     @page = Page.home_page
     initialize_page
@@ -20,5 +19,4 @@ class SiteController < ApplicationController
     @title         = "PitsLamp #{@page.title}"
     @selected_page = @page.permalink
   end
-
 end

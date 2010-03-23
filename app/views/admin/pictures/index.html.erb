@@ -1,0 +1,23 @@
+<h1>Listing sets</h1>
+
+<table>
+  <tr>
+    <th>Set URL</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pictures.each do |picture| %>
+  <tr>
+    <td><%= picture.set_url %></td>
+    <td><%= link_to 'Show', admin_picture_path(picture) %></td>
+    <td><%= link_to 'Edit', edit_admin_picture_path(picture) %></td>
+    <td><%= link_to 'Destroy', admin_picture_path(picture), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New picture', new_admin_picture_path %>

@@ -1,0 +1,12 @@
+- form_for @comment, :html => { :id => 'comment_input' } do |form|
+
+  .comment_metadata
+    = form.label :author, "Naam <span>Verplicht</span>".html_safe
+    = form.text_field :author
+    = form.label :email, "E-mailadres <span>Verplicht</span>".html_safe
+    = form.text_field :email
+    = form.label :url, "Website <span>Verplicht</span>".html_safe
+    = form.text_field :url, :value => "http://"
+    = form.label :content, "Bericht <span>Verplicht</span>".html_safe
+    = form.text_field :content, { "rows" => 9, "cols" => 29 }
+    = form.submit "Toevoegen", :class => "button"

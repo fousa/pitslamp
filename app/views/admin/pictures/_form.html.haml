@@ -1,0 +1,7 @@
+- form_for [:admin, @picture] do |form|
+  = form.error_messages
+
+  = form.label :set_url
+  = form.text_field :set_url
+
+  = form.submit "toevoegen"

@@ -1,0 +1,15 @@
+.post
+  %h3
+    = link_to_unless_current post.title, post_path(post.permalink)
+    %span.created
+      = "#{post.created_at.strftime("%b %D %Y")} - #{post.created_at.strftime("%H:%M")}"
+  / %span.comment_count
+  /   = link_to_unless_current "#{post.comments.approved.size.to_s.rjust(2, "0")} reacties", post
+
+  = post.content
+
+  %span.update
+    = "(laatste update op: #{post.updated_at.strftime("%b %d, %Y")} om #{post.updated_at.strftime("%H:%M")})"
+
+  %span.link
+    = link_to_unless_current "Lees meer", post_path(post.permalink)

@@ -1,1 +1,2 @@
 require "oembed"
+require "flickraw"
