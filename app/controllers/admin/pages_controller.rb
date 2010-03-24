@@ -1,29 +1,10 @@
 class Admin::PagesController < Admin::BaseController
   def index
     @pages = Page.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @pages }
-    end
-  end
-
-  def show
-    @page = Page.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @page }
-    end
   end
 
   def new
     @page = Page.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @page }
-    end
   end
 
   def edit
@@ -33,28 +14,20 @@ class Admin::PagesController < Admin::BaseController
   def create
     @page = Page.new(params[:page])
 
-    respond_to do |format|
-      if @page.save
-        format.html { redirect_to(admin_page_path(@page), :notice => 'Page was successfully created.') }
-        format.xml  { render :xml => @page, :status => :created, :location => @page }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @page.errors, :status => :unprocessable_entity }
-      end
+    if @page.save
+      redirect_to(admin_page_path(@page), :notice => 'Page was successfully created.')
+    else
+      render :action => "new"
     end
   end
 
   def update
     @page = Page.find(params[:id])
 
-    respond_to do |format|
-      if @page.update_attributes(params[:page])
-        format.html { redirect_to(admin_page_path(@page), :notice => 'Page was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @page.errors, :status => :unprocessable_entity }
-      end
+    if @page.update_attributes(params[:page])
+      redirect_to(admin_page_path(@page), :notice => 'Page was successfully updated.')
+    else
+      render :action => "edit"
     end
   end
 
@@ -62,9 +35,6 @@ class Admin::PagesController < Admin::BaseController
     @page = Page.find(params[:id])
     @page.destroy
 
-    respond_to do |format|
-      format.html { redirect_to(pages_url) }
-      format.xml  { head :ok }
-    end
+    redirect_to(admin_pages_path)
   end
 end

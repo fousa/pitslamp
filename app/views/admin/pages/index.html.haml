@@ -1,0 +1,20 @@
+%h3 Listing pages
+
+%table
+  %tr
+    %th Name
+    %th Menu name
+    %th Handled by controller
+    %th Home page
+    %th{ :colspan => "2" }
+
+  - @pages.each do |page|
+    %tr
+      %td= page.title
+      %td= page.menu_title
+      %td= page.handled_by_controller
+      %td= page.home_page? ? "HOME" : ""
+      %td= link_to "Edit", edit_admin_page_path(page)
+      %td= link_to "Destroy", admin_page_path(page), :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New page", new_admin_page_path
