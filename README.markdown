@@ -1,6 +1,8 @@
 PITSLAMP
 ========
 
+This is the open-sourced website of the official [PitsLamp](http://www.pitslamp.be) website!
+
 GET THE SITE ONLINE
 -------------------
 
