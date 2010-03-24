@@ -39,4 +39,4 @@ Below you'll find the links to administrate the website
 QUESTIONS?
 ----------
 
-Just ask here on Github!
+Just ask me on Github!
