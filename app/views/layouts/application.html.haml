@@ -12,10 +12,7 @@
 
     = auto_discovery_link_tag :rss, posts_url(:format => :rss)
 
-    = javascript_include_tag "jquery"
-    = javascript_include_tag "jquery-ui"
-    = javascript_include_tag "jquery.galleriffic"
-    = javascript_include_tag "rails"
+    = javascript_include_tag "jquery", "jquery-ui", "jquery.galleriffic", "rails", "application"
 
     = stylesheet_link_tag "theme"
     = stylesheet_link_tag "gallery"
@@ -46,7 +43,7 @@
 
         #navigation
           %ul#nav_primary{ :class => @page ? @page.permalink : "" }
-            - Page.active.each do |page|
+            - Page.order("position ASC").where(:active => true).each do |page|
               %li{ :id => page.permalink, :class => @selected_page == page.permalink ? "selected" : "" }= link_to page.menu_title, "/#{page.permalink}", :class => @selected_page == page.permalink ? "selected" : ""
         #content
           #content_primary

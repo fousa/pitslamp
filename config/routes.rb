@@ -9,7 +9,7 @@ Pitslamp::Application.routes.draw do |map|
   namespace :admin do
     root :to => "admin/pages#index"
 
-    resource  :sort,      :controller => "sort",      :as => "menu"
+    resource  :menu,      :controller => "menu"
     resource  :home_page, :controller => "home_page", :as => "homepage"
 
     resources :pages

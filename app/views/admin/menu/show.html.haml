@@ -1,0 +1,7 @@
+%h2 Sorteer de menu items
+
+%ul#sort
+  - @pages.each do |page|
+    %li{ :id => "menu_item_#{page.id}" }
+      %img.handle{ :src => "/images/arrow.png", :alt => "move", :width => "16", :height => "16" }
+      = page.menu_title
