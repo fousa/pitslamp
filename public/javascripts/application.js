@@ -12,4 +12,9 @@ $(function() {
   		});
   	}
   });
+
+	$("#thumbs").galleriffic({
+  	imageContainerSel: "#slideshow",
+  	controlsContainerSel: "#controls"
+  });
 });

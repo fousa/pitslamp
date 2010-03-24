@@ -12,11 +12,3 @@
         - embedded_image = embed(url)
         %li
           = link_to image_tag(embedded_image.url), embedded_image.url, { :title => embedded_image.title, :class=> "thumb" }
-
-%script{ :type => "text/javascript" }
-  $(document).ready(function() {
-  $('#thumbs').galleriffic({
-  imageContainerSel: '#slideshow',
-  controlsContainerSel: '#controls'
-  });
-  });
