@@ -34,6 +34,7 @@ Below you'll find the links to administrate the website
 - **create/edit/delete flickr sets**: [/admin/flickr](http://localhost:3000/admin/flickr)
 - **create/edit/delete blog posts**: [/admin/blog](http://localhost:3000/admin/blog)
 - **edit menu sorting**: [/admin/menu](http://localhost:3000/admin/menu)
+- **edit home_page**: [/admin/homepage](http://localhost:3000/admin/homepage)
 
 QUESTIONS?
 ----------

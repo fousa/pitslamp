@@ -1,4 +1,4 @@
-class Admin::SortController < ApplicationController
+class Admin::SortController < Admin::BaseController
   def show
     @pages = Page.active
   end

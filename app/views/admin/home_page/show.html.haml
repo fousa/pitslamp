@@ -1,0 +1,11 @@
+%h2 Selecteer de home page
+
+- form_tag admin_home_page_path, :method => :put do
+  %ul
+    - @pages.each do |page|
+      %li
+        = radio_button_tag "selected", page.id, page.home_page?
+        %strong
+          = page.menu_title
+  = submit_tag "Aanpassen"
+

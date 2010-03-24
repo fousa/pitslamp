@@ -6,8 +6,6 @@ class ApplicationController < ActionController::Base
 
   helper_method :admin?
 
-  before_filter :authenticate
-
   def authenticate
     authenticate_or_request_with_http_basic do |user, password|
       user == CONFIG["pitslamp"]["login"] && password == CONFIG["pitslamp"]["password"]
