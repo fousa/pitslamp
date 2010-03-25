@@ -1,8 +1,8 @@
 class Page < ActiveRecord::Base
-  validates_presence_of :title
-  validates_presence_of :permalink
-  validates_presence_of :content,    :if => Proc.new { |page| page.handled_by_controller? }
-  validates_presence_of :menu_title, :if => Proc.new { |page| page.active? }
+  validates :title,      :presence => true
+  validates :permalink,  :presence => true
+  validates :content,    :presence => true, :if => Proc.new { |page| not page.handled_by_controller? }
+  validates :menu_title, :presence => true, :if => Proc.new { |page| page.active? }
 
   scope :ordered, order("position ASC")
   scope :active,  ordered.where(:active => true)
