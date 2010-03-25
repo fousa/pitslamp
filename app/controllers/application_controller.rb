@@ -9,11 +9,12 @@ class ApplicationController < ActionController::Base
   def authenticate
     authenticate_or_request_with_http_basic do |user, password|
       user == CONFIG["pitslamp"]["login"] && password == CONFIG["pitslamp"]["password"]
+      @admin = true
     end
   end
 
   def admin?
-    false
+    @admin
   end
 
 end
