@@ -3,7 +3,6 @@ Pitslamp::Application.routes.draw do |map|
 
   resources :posts,     :as => "blog"
   resources :portfolio, :as => "portfolio"
-  resources :home,      :as => "home",     :controller => "home"
   resources :contacts,  :as => "contact"
 
   namespace :admin do
