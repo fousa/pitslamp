@@ -4,11 +4,8 @@ class CreatePages < ActiveRecord::Migration
       t.string  :menu_title
       t.string  :title
       t.string  :permalink
-
       t.text    :content
-
       t.integer :position
-
       t.boolean :handled_by_controller
       t.boolean :home_page
       t.boolean :active

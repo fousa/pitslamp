@@ -2,13 +2,13 @@ class Page < ActiveRecord::Base
   validates :title,      :presence => true
   validates :permalink,  :presence => true
   validates :content,    :presence => true, :if => Proc.new { |page| not page.handled_by_controller? }
-  validates :menu_title, :presence => true, :if => Proc.new { |page| page.active? }
 
   scope :ordered, order("position ASC")
-  scope :active,  ordered.where(:active => true)
+  scope :in_menu,  ordered.where("pages.menu_title != ''")
+
 
   def self.home_page
-    active.where(:home_page => true).first
+    where(:home_page => true).first
   end
 
   def self.page_with_permalink(permalink)

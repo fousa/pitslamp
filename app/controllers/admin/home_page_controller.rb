@@ -1,6 +1,6 @@
 class Admin::HomePageController < Admin::BaseController
   def show
-    @pages = Page.active
+    @pages = Page.in_menu
   end
 
   def update

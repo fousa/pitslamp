@@ -41,7 +41,7 @@
 
         #navigation
           %ul#nav_primary{ :class => @page ? @page.permalink : "" }
-            - Page.order("position ASC").where(:active => true).each do |page|
+            - Page.order("position ASC").in_menu.each do |page|
               %li{ :id => page.permalink, :class => @selected_page == page.permalink ? "selected" : "" }= link_to page.menu_title, "/#{page.permalink}", :class => @selected_page == page.permalink ? "selected" : ""
         #content
           #content_primary
