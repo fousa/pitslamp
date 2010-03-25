@@ -8,7 +8,7 @@ class Contact
 
   validates_format_of :email, :allow_nil => false, :with => /^.+@[^\.].*\.[a-z]{2,}$/ix, :message => "must be a valid email"
 
-  validates_inclusion_of :spam_check, :in => %w( 2 )
+  validates_inclusion_of :spam_check, :in => %w( hot )
 
   def initialize(options={})
     [:id, :name, :email, :subject, :spam_check, :content].each do |field|
