@@ -29,7 +29,7 @@ class Admin::PicturesController < Admin::BaseController
     if @picture.update_attributes(params[:picture])
       expire_page '/portfolio'
       expire_page '/home'
-      redirect_to admin_pictures_path, :notice => 'Picture was successfully updated.'
+      redirect_to edit_admin_picture_path(@picture), :notice => 'Picture was successfully updated.'
     else
       render :action => "edit"
     end

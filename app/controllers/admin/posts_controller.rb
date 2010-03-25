@@ -15,7 +15,7 @@ class Admin::PostsController < Admin::BaseController
     @post = Post.new(params[:post])
 
     if @post.save
-      redirect_to(@post, :notice => 'Post was successfully created.')
+      redirect_to admin_posts_path, :notice => 'Post was successfully created.'
     else
       render :action => "new"
     end
@@ -25,7 +25,7 @@ class Admin::PostsController < Admin::BaseController
     @post = Post.find(params[:id])
 
     if @post.update_attributes(params[:post])
-      redirect_to(@post, :notice => 'Post was successfully updated.')
+      redirect_to edit_admin_post_path(@post), :notice => 'Post was successfully updated.'
     else
       render :action => "edit"
     end
@@ -35,6 +35,6 @@ class Admin::PostsController < Admin::BaseController
     @post = Post.find(params[:id])
     @post.destroy
 
-    redirect_to(posts_url)
+    redirect_to posts_path
   end
 end
