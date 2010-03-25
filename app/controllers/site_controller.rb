@@ -18,5 +18,6 @@ class SiteController < ApplicationController
   def initialize_page
     @title         = "PitsLamp #{@page.title}"
     @selected_page = @page.permalink
+    @body_style    = @page.permalink
   end
 end

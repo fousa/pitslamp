@@ -27,8 +27,9 @@ class ContactsController < ApplicationController
   private
 
   def initialize_contact_page
-    @title = "PitsLamp Contactsformulier"
+    @title         = "PitsLamp Contactsformulier"
     @selected_page = "contact"
+    @body_style    = "contact"
   end
 
 end
