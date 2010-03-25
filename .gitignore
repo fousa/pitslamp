@@ -1,6 +1,9 @@
 # Rails locals
 log/*.log
-tmp/**/*
+tmp/cache/*
+tmp/pids/*
+tmp/sessions/*
+tmp/sockets/*
 config/database.yml
 config/config.yml
 db/*.sqlite3
