@@ -20,6 +20,14 @@ Next you should change the configuration data in the config/config.yml file to y
       login:          <your-admin-login>
       password:       <-your-admin-password>
 
+Next you should add a database.yml file containing the following if you wish to use SQLite:
+
+    development:
+      adapter: sqlite3
+      database: db/development.sqlite3
+      pool: 5
+      timeout: 5000
+
 Next create and migrate your database:
 
     rake db:create
