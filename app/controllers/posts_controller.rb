@@ -8,9 +8,11 @@ class PostsController < ApplicationController
   def show
     initialize_blog
 
-    @post    = Post.where(:permalink => params[:id]).first
+    @post    = Post.permalink(params[:id], admin?).first
     @comment = Comment.new
   end
+
+  private
 
   def initialize_blog
     @body_style = "post"

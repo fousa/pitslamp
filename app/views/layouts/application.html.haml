@@ -42,21 +42,21 @@
         #navigation
           %ul#nav_primary{ :class => @page ? @page.permalink : "" }
             - Page.order("position ASC").in_menu.each do |page|
-              %li{ :id => page.permalink, :class => @selected_page == page.permalink ? "selected" : "" }= link_to page.menu_title, "/#{page.permalink}", :class => @selected_page == page.permalink ? "selected" : ""
+              %li{ :id => page.permalink, :class => @selected_page == page.permalink ? "selected" : "" }= link_to page.menu_title, page.external_url? ? page.permalink : "/#{page.permalink}", :class => @selected_page == page.permalink ? "selected" : ""
         #content
           #content_primary
             - if flash[:notice]
               %p{ :style => "color: green;" }= flash[:notice]
 
-            - if flash[:error]
-              %p{ :style => "color: red;" }= flash[:error]
+            - if flash[:alert]
+              %p{ :style => "color: red;" }= flash[:alert]
 
             = yield
 
             - if admin?
               = render "layouts/admin_menu"
 
-    - if Rails.env.production && !admin?
+    - if Rails.env.production? && !admin?
       %script{ :src => "http://www.google-analytics.com/urchin.js", :type => "text/javascript" }
       :javascript
         _uacct = "UA-2550570-1";

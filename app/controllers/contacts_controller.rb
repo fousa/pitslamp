@@ -1,5 +1,4 @@
 class ContactsController < ApplicationController
-
   def index
     redirect_to :action => :new
   end
@@ -18,9 +17,11 @@ class ContactsController < ApplicationController
     if @contact.valid?
       Mailer.contact_notifier(@contact).deliver
 
-      redirect_to contacts_path, :notice => "Bedankt voor je bericht, het zal zo snel mogelijk behandeld worden."
+      flash[:notice] = "Bedankt voor je bericht, het zal zo snel mogelijk behandeld worden."
+      render :action => "new"
     else
-      render :action => "new", :alert => "U hebt niet alle verplichte velden ingevuld. E-mail is verplicht."
+      flash[:alert] = "U hebt niet alle verplichte velden ingevuld. E-mail is verplicht."
+      render :action => "new"
     end
   end
 

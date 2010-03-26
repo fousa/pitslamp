@@ -4,12 +4,9 @@ class Post < ActiveRecord::Base
   validates_presence_of :permalink
   validates_presence_of :content
 
-  # has_many :comments
+  has_many :comments
 
-  scope :ordered, order(:created_at)
-  scope :blog,    lambda { where("(published_at NOT IS NULL AND published_at <= ?) OR created_at <= ?", Time.now, Time.now).ordered }
-
-  def publish_date
-    published_at || created_at
-  end
+  scope :ordered,   order(:created_at)
+  scope :blog,      lambda { where("published_at <= ?", Time.zone.now).ordered }
+  scope :permalink, lambda { |permalink, admin| admin ? where(:permalink => permalink) : blog.where(:permalink => permalink) }
 end

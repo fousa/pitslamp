@@ -20,7 +20,7 @@ class Page < ActiveRecord::Base
   end
 
   def handled_by_controller?
-    content.nil? || content.empty?
+    self.content.nil? || self.content.empty?
   end
 
   def external_url?

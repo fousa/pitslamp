@@ -1,20 +1,17 @@
 #text_top
 #text_content
   .post
-    = render :partial => "post", :locals => { :post => @post }
-    / %h4
-    /   = "Reacties: #{@post.comments.approved.size.to_s.rjust(2, "0")}"
-    / - if !@post.comments.approved.blank?
-    /   = render :partial => "comments/comment", :collection => @post.comments.approved.reverse, :locals => { :size => @post.comments.approved.size, :show_approved => true }
-    / - else
-    /   %p Er zijn nog geen reacties op dit bericht
-    /
-    / - if !@post.comments.rejected.blank? && logged_in?
-    /   %h2= pluralize(@post.comments.rejected.size, "rejected comment")
-    /   = render :partial => 'comments/comment', :collection => @post.comments.rejected.reverse, :locals => { :size => @post.comments.rejected.size, :show_approved => false }
-    /
-    / .comment_form
-    /   %h4 Plaats een reactie
-    /   = render :partial => "comments/form"
+    = render :partial => "posts/post", :locals => { :post => @post }
+
+    .comment_form
+      %h4 Plaats een reactie
+      = render :partial => "comments/form"
+
+    %h4
+      = "Reacties: #{@post.comments.count}"
+    - if @post.comments.blank?
+      %p Er zijn nog geen reacties op dit bericht
+    - else
+      = render :partial => "comments/comment", :collection => @post.comments, :locals => { :size => @post.comments.count }
 
 #text_bottom

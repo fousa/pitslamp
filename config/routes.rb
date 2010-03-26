@@ -1,7 +1,9 @@
 Pitslamp::Application.routes.draw do |map|
   root :to => "site#index"
 
-  resources :posts,     :as => "blog"
+  resources :posts,     :as => "blog" do
+    resources :comments
+  end
   resources :portfolio, :as => "portfolio"
   resources :contacts,  :as => "contact"
 

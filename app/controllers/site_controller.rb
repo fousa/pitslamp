@@ -3,7 +3,7 @@ class SiteController < ApplicationController
     @page = Page.home_page
     initialize_page
 
-    redirect_to @page.permalink       if @page.permalink.external_url?
+    redirect_to @page.permalink       if @page.external_url?
     redirect_to "/#{@page.permalink}" if @page.handled_by_controller?
   end
 
@@ -11,7 +11,7 @@ class SiteController < ApplicationController
     @page = Page.page_with_permalink(params[:url])
     initialize_page
 
-    redirect_to @page.permalink if @page.permalink.external_url?
+    redirect_to @page.permalink if @page.external_url?
 
     raise "This page is controller driven!" if @page.handled_by_controller?
   end

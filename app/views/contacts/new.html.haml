@@ -1,4 +1,4 @@
-- if flash[:notice] && Rails.env.production
+- if flash[:notice] && Rails.env.production?
   :javascript
     var google_conversion_id = 1038512191;
     var google_conversion_language = \"nl\";
@@ -18,7 +18,7 @@
     = form.label :name, "Naam"
     = form.text_field :name
 
-    = form.label :spam_check, "is fire hot or cold?"
+    = form.label :spam_check, "Is vuur warm of koud?"
     = form.text_field :spam_check
 
     = form.label :subject, "Onderwerp"

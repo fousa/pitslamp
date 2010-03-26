@@ -2,13 +2,11 @@ class Contact
 
   include ActiveModel::Validations
 
-  validates_presence_of :name
-  validates_presence_of :subject
-  validates_presence_of :content
-
-  validates_format_of :email, :allow_nil => false, :with => /^.+@[^\.].*\.[a-z]{2,}$/ix, :message => "must be a valid email"
-
-  validates_inclusion_of :spam_check, :in => %w( hot )
+  validates :name,       :presence  => true
+  validates :subject,    :presence  => true
+  validates :content,    :presence  => true
+  validates :email,      :presence  => true, :format    => { :with => /^.+@[^\.].*\.[a-z]{2,}$/ix }, :if => Proc.new { |c| not c.email.blank? }
+  validates :spam_check, :inclusion => { :in   => %w( warm ) }
 
   def initialize(options={})
     [:id, :name, :email, :subject, :spam_check, :content].each do |field|

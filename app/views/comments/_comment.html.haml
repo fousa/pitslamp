@@ -1,31 +1,11 @@
 .comment
-  %img{ :src => gravatar(comment.email), :alt => "" }
-	%h3.author= comment.email == CONFIG["pitslamp"]["gravatar_email"] ? "me" : ""
-	%span.counter
-	  = "##{size}"<%= size + 1 - comment_counter
-	<% if comment.url? %>
-		<a href="<%= strip_tags(comment.url) %>" rel="nofollow" class="comment_author" title="Visit <%= strip_tags(comment.author) %>'s website"><%= strip_tags(comment.author) %></a></span>
-	<% else %>
-		<%= strip_tags(comment.author) %>
-	<% end %>
-	<span class="reaction_time">reageerde <%= distance_of_time_in_words(@post.created_at, comment.created_at) %> later</span>
-	</h3>
+  = gravatar_for(comment, :size => 60).html_safe
+  %h3.author
+    = comment.email == CONFIG["pitslamp"]["gravatar_email"] ? "me" : ""
+    = link_to_unless !comment.url, comment.author, comment.url, :class => "comment_author"
+    %span.reaction_time= "reageerde #{distance_of_time_in_words(@post.created_at, comment.created_at)} later"
 
-	<p class="comment_content">
+  %p.comment_content= comment.content
 
-	<%= strip_tags(comment.content) %>
-
-	</p>
-
-	<% if logged_in? %>
-		<p class="admin">
-		<%= link_to '<img src="/images/delete.gif" alt="Remove" />', comment_path(comment), :confirm => 'Are you sure you want to destroy this comment?', :method => :delete, :title =>  "Remove this comment" %>
-	<% end %>
-	<% if show_approved && logged_in? %>
-		<%= link_to '<img src="/images/spam.gif" alt="Spam" />', reject_comment_path(comment), :confirm => 'Are you sure you want to mark this comment as spam?', :method => :put, :title => "Mark as spam" %>
-	<% elsif !show_approved && logged_in? %>
-		<%= link_to '<img src="/images/approve.gif" alt="Approve" />', approve_comment_path(comment), :confirm => 'I&rsquo;ll inform Akismet and publish the comment, are you sure?', :method => :put, :title => "Approve comment" %>
-		</p>
-	<% end %>
-
-</div>
+  - if admin?
+    %p.admin= link_to "<img src=\"/images/delete.gif\" alt=\"Remove\" />", comment_path(comment), :confirm => 'Are you sure you want to destroy this comment?', :method => :delete, :title => "Remove this comment"
