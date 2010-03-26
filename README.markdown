@@ -18,7 +18,8 @@ Next you should change the configuration data in the config/config.yml file to y
       owner_email:    <email-from-the-owner>
       gravatar_email: <email-user-to-fetch-your-gravatar>
       login:          <your-admin-login>
-      password:       <-your-admin-password>
+      password:       <your-admin-password>
+      type:           <type-of-pitslamp-site-for-layout>
 
 Next you should add a database.yml file containing the following if you wish to use SQLite:
 
