@@ -12,8 +12,8 @@
     %tr
       %td= page.title
       %td= page.menu_title
-      %td= page.handled_by_controller
-      %td= page.home_page? ? "HOME" : ""
+      %td= page.handled_by_controller? ? "X" : ""
+      %td= page.home_page? ? "X" : ""
       %td= link_to "Edit", edit_admin_page_path(page)
       %td= link_to "Destroy", admin_page_path(page), :confirm => 'Are you sure?', :method => :delete
 

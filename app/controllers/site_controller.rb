@@ -4,7 +4,7 @@ class SiteController < ApplicationController
     initialize_page
 
     redirect_to @page.permalink       if @page.permalink.external_url?
-    redirect_to "/#{@page.permalink}" if  @page.handled_by_controller?
+    redirect_to "/#{@page.permalink}" if @page.handled_by_controller?
   end
 
   def show

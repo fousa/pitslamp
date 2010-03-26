@@ -1,7 +1,6 @@
 class Page < ActiveRecord::Base
   validates :title,      :presence => true
   validates :permalink,  :presence => true
-  validates :content,    :presence => true, :if => Proc.new { |page| not page.handled_by_controller? }
 
   scope :ordered, order("position ASC")
   scope :in_menu,  ordered.where("pages.menu_title != ''")
@@ -18,6 +17,10 @@ class Page < ActiveRecord::Base
     ids.each_with_index do |id, index|
       Page.find(id).update_attribute(:position, index)
     end
+  end
+
+  def handled_by_controller?
+    content.nil? || content.empty?
   end
 
   def external_url?

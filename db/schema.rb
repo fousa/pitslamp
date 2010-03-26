@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100325211027) do
+ActiveRecord::Schema.define(:version => 20100326123937) do
 
   create_table "comments", :force => true do |t|
     t.integer  "post_id"
@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(:version => 20100325211027) do
     t.string   "permalink"
     t.text     "content"
     t.integer  "position"
-    t.boolean  "handled_by_controller"
     t.boolean  "home_page"
     t.datetime "created_at"
     t.datetime "updated_at"
