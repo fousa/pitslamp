@@ -10,6 +10,4 @@ class Comment < ActiveRecord::Base
   attr_accessor :spam
 
   scope :sorted,   order(:created_at)
-  scope :approved, sorted.where(:approved => true)
-  scope :rejected, sorted.where(:approved => false)
 end
