@@ -1,3 +1,13 @@
+- if flash[:notice] && Rails.env.production
+  :javascript
+    var google_conversion_id = 1038512191;
+    var google_conversion_language = \"nl\";
+    var google_conversion_format = \"2\";
+    var google_conversion_color = \"ffffff\";
+    var google_conversion_label = \"-ZszCN25tAEQv-CZ7wM\";
+    var google_conversion_value = 0;
+  %script{ :type => "text/javascript", :src => "http://www.googleadservices.com/pagead/conversion.js" }
+
 #text_top
 #text_content
   %h3 Contact

@@ -56,8 +56,8 @@
             - if admin?
               = render "layouts/admin_menu"
 
-    - if Rails.env == "production" && !admin?
+    - if Rails.env.production && !admin?
       %script{ :src => "http://www.google-analytics.com/urchin.js", :type => "text/javascript" }
-      %script{ :type => "text/javascript" }
+      :javascript
         _uacct = "UA-2550570-1";
         urchinTracker();
