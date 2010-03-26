@@ -2,7 +2,7 @@
   %h3
     = link_to_unless_current post.title, post_path(post.permalink)
     %span.created
-      = "#{post.created_at.strftime("%b %D %Y")} - #{post.created_at.strftime("%H:%M")}"
+      = "#{post.publish_date.strftime("%b %D %Y")} - #{post.publish_date.strftime("%H:%M")}"
   / %span.comment_count
   /   = link_to_unless_current "#{post.comments.approved.size.to_s.rjust(2, "0")} reacties", post
 

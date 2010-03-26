@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   def index
     initialize_blog
 
-    @posts = Post.order(:created_at).paginate(:page => params[:page], :per_page => 5)
+    @posts = Post.blog.paginate(:page => params[:page], :per_page => 5)
   end
 
   def show
