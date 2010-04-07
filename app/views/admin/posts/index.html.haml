@@ -1,18 +1,18 @@
 %h2 Listing posts
-
+  
 %table
   %tr
     %th Title
     %th Author
     %th Published at
     %th{ :colspan => "2" }
-
+  
   - @posts.each do |post|
     %tr
       %td= post.title
       %td= post.author
-      %td= post.published_at
+      %td= post.published_at.strftime("%d %b %Y - %H:%M")
       %td= link_to 'Edit', edit_admin_post_path(post)
       %td= link_to 'Destroy', admin_post_path(post), :confirm => 'Are you sure?', :method => :delete
-
+  
 %p= link_to 'New post', new_admin_post_path

@@ -1,17 +1,13 @@
-#text_top
-#text_content
-  .post
-    = render :partial => "posts/post", :locals => { :post => @post }
+.post
+  = render :partial => "posts/post", :locals => { :post => @post }
 
-    .comment_form
-      %h4 Plaats een reactie
-      = render :partial => "comments/form"
+  .comment_form
+    %h4 Plaats een reactie
+    = render :partial => "comments/form"
 
-    %h4
-      = "Reacties: #{@post.comments.count}"
-    - if @post.comments.blank?
-      %p Er zijn nog geen reacties op dit bericht
-    - else
-      = render :partial => "comments/comment", :collection => @post.comments, :locals => { :size => @post.comments.count }
-
-#text_bottom
+  %h4
+    = "Reacties: #{@post.comments.count}"
+  - if @post.comments.blank?
+    %p Er zijn nog geen reacties op dit bericht
+  - else
+    = render :partial => "comments/comment", :collection => @post.comments, :locals => { :size => @post.comments.count }

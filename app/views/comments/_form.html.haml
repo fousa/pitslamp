@@ -1,19 +1,24 @@
 - form_for @comment, :url => post_comments_path(@post.permalink), :html => { :id => 'comment_input' } do |form|
 
   .comment_metadata
-    = form.label :author, "Naam <span>Verplicht</span>".html_safe
-    = form.text_field :author
+    %span.input
+      = form.label :author, "Naam <span>Verplicht</span>".html_safe
+      = form.text_field :author
 
-    = form.label :email, "E-mailadres <span>Verplicht</span>".html_safe
-    = form.text_field :email
+    %span.input
+      = form.label :email, "E-mailadres <span>Verplicht</span>".html_safe
+      = form.text_field :email
 
-    = form.label :url, "Website <span>Verplicht</span>".html_safe
-    = form.text_field :url
+    %span.input
+      = form.label :url, "Website <span>Verplicht</span>".html_safe
+      = form.text_field :url
 
-    = form.label :spam, "Is vuur warm of koud? <span>Verplicht</span>".html_safe
-    = form.text_field :spam
+    %span.input
+      = form.label :spam, "Is vuur warm of koud? <span>Verplicht</span>".html_safe
+      = form.text_field :spam
 
-    = form.label :content, "Bericht <span>Verplicht</span>".html_safe
-    = form.text_field :content, { "rows" => 9, "cols" => 29 }
+    %span.text
+      = form.label :content, "Bericht <span>Verplicht</span>".html_safe
+      = form.text_area :content, { "rows" => 9, "cols" => 29 }
 
     = form.submit "Toevoegen", :class => "button"

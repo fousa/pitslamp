@@ -8,24 +8,27 @@
     var google_conversion_value = 0;
   %script{ :type => "text/javascript", :src => "http://www.googleadservices.com/pagead/conversion.js" }
 
-#text_top
-#text_content
-  %h3 Contact
-  - form_for @contact, :class => "feedback" do |form|
+%h3 Contact
+%p.description alle velden zijn verplicht
+- form_for @contact, :class => "feedback" do |form|
+  %span.input
     = form.label :email, "E-mail"
     = form.text_field :email
-
+  %span.input
     = form.label :name, "Naam"
     = form.text_field :name
-
-    = form.label :spam_check, "Is vuur warm of koud?"
-    = form.text_field :spam_check
-
+    
+  %span.input
     = form.label :subject, "Onderwerp"
     = form.text_field :subject
 
+  %span.text
     = form.label :content, "Bericht"
     = form.text_area :content
 
-    = form.submit "Verzenden"
-#text_bottom
+  %span.input
+    = form.label :spam_check, "vuur is ..."
+    = form.text_field :spam_check
+
+  = form.submit "Verzenden"
+

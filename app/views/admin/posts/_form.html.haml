@@ -1,19 +1,24 @@
 - form_for [:admin, @post] do |form|
   = form.error_messages
 
-  = form.label :title
-  = form.text_field :title
+  %span.input
+    = form.label :title
+    = form.text_field :title
 
-  = form.label :content
-  = form.text_area :content
+  %span.text
+    = form.label :content
+    = form.text_area :content
 
-  = form.label :author
-  = form.text_field :author
+  %span.input
+    = form.label :author
+    = form.text_field :author
 
-  = form.label :permalink
-  = form.text_field :permalink
+  %span.input
+    = form.label :permalink
+    = form.text_field :permalink
 
-  = form.label :published_at
-  = form.datetime_select :published_at
+  %span#datetime
+    = form.label :published_at
+    = form.datetime_select :published_at
 
   = form.submit

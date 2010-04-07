@@ -5,6 +5,7 @@ class Contact
   validates :name,       :presence  => true
   validates :subject,    :presence  => true
   validates :content,    :presence  => true
+  
   validates :email,      :presence  => true, :format    => { :with => /^.+@[^\.].*\.[a-z]{2,}$/ix }, :if => Proc.new { |c| not c.email.blank? }
   validates :spam_check, :inclusion => { :in   => %w( warm ) }
 

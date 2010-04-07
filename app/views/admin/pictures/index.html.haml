@@ -1,5 +1,5 @@
 %h3 Listing sets
-
+  
 %table
   %tr
     %th Set URL
@@ -10,5 +10,5 @@
       %td= picture.set_url
       %td= link_to "Edit", edit_admin_picture_path(picture)
       %td= link_to "Destroy", admin_picture_path(picture), :confirm => "Are you sure?", :method => :delete
-
+  
 %p= link_to "New picture", new_admin_picture_path

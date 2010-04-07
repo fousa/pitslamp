@@ -1,16 +1,20 @@
 - form_for [:admin, @page] do |form|
   = form.error_messages
 
-  = form.label :title
-  = form.text_field :title
+  %span.input
+    = form.label :title
+    = form.text_field :title
+  
+  %span.input
+    = form.label :permalink
+    = form.text_field :permalink
 
-  = form.label :permalink
-  = form.text_field :permalink
+  %span.input
+    = form.label :menu_title
+    = form.text_field :menu_title
 
-  = form.label :menu_title
-  = form.text_field :menu_title
-
-  = form.label :content
-  = form.text_area :content
+  %span.text
+    = form.label :content
+    = form.text_area :content
 
   = form.submit

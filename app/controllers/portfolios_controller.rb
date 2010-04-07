@@ -1,10 +1,12 @@
 class PortfoliosController < ApplicationController
   caches_page :index
+  layout "portfolio"
 
   def index
     initialize_portfolio
 
     @urls = Picture.urls
+    
   end
 
   private

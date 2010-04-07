@@ -76,7 +76,7 @@ form div {
 }
 
 form label {
-	width: 130px;
+	width: 150px;
 	float:left;
 }
 
@@ -177,12 +177,12 @@ ul.results li {
 /* @group Table lay-out */
 
 #content #content_primary table {
-	border: 1px solid #999999;
+	border: 1px solid #0f0f0f;
 }
 
 #content #content_primary table td{
 	padding: 2px 5px;
-	border: 1px solid #999999;
+	border: 1px solid #0f0f0f;
 }
 
 /* @end */
