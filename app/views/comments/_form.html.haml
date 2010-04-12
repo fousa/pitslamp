@@ -2,19 +2,19 @@
 
   .comment_metadata
     %span.input
-      = form.label :author, "Naam <span>Verplicht</span>".html_safe
+      = form.label :author, "Naam*"
       = form.text_field :author
 
     %span.input
-      = form.label :email, "E-mailadres <span>Verplicht</span>".html_safe
+      = form.label :email, "E-mailadres*"
       = form.text_field :email
 
     %span.input
-      = form.label :url, "Website <span>Verplicht</span>".html_safe
+      = form.label :url, "Website"
       = form.text_field :url
 
     %span.input
-      = form.label :spam, "Is vuur warm of koud? <span>Verplicht</span>".html_safe
+      = form.label :spam, "Vuur is ...*"
       = form.text_field :spam
 
     %span.text

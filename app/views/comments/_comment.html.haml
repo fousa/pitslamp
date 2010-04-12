@@ -1,9 +1,9 @@
-.comment
-  = gravatar_for(comment, :size => 60).html_safe
-  %h3.author
-    = comment.email == CONFIG["pitslamp"]["gravatar_email"] ? "me" : ""
-    = link_to_unless !comment.url, comment.author, comment.url, :class => "comment_author"
-    %span.reaction_time= "reageerde #{distance_of_time_in_words(@post.created_at, comment.created_at)} later"
+.comment{ :class => comment.email == CONFIG["pitslamp"]["gravatar_email"] ? "owner" : "" }
+  %p.comment_meta
+    = gravatar_for(comment, :size => 60).html_safe
+    %span.reaction_time= "#{comment.created_at.strftime("%d %B %Y om %H:%M")}"
+    %span.author= link_to_unless !comment.url, comment.author, comment.url, :class => "comment_author"
+    
 
   %p.comment_content= comment.content
 

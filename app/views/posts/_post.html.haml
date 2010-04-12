@@ -3,13 +3,14 @@
     = link_to_unless_current post.title, post_path(post.permalink)
     %span.created
       = "#{post.published_at.strftime("%d %B %Y - %H:%M")}"
-  %span.comment_count
-    = link_to_unless_current "#{post.comments.count} reacties", post_path(post.permalink)
+  %span.comments_count
+    = link_to_unless_current "#{post.comments.count}", post_path(post.permalink)
+    reacties
 
   = raw post.content
-
+  
   %span.update
     = "(laatste update op: #{post.updated_at.strftime("%b %d, %Y om %H:%M")})"
 
-  %span.link
-    = link_to_unless_current "Lees meer", post_path(post.permalink)
+  %h4
+    = link_to_unless_current "#{post.comments.count} reacties op &quot;#{post.title}&quot;".html_safe, post_path(post.permalink)
