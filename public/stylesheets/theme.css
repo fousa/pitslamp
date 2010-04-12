@@ -2,6 +2,7 @@
 	http://localhost:3000/stylesheets/theme.css?1270679812
 	http://localhost:3000/stylesheets/theme.css?1271099170
 	http://localhost:3000/stylesheets/theme.css?1271103183
+	http://localhost:3000/stylesheets/theme.css?1271114724
 */
 
 @import url('reset.css');
@@ -336,10 +337,10 @@ body{
 			border: none;
 			width: 102px;
 			height: 22px;
-			padding: 2px 0px;
+			padding: 0px;
 			margin-top: 5px;
 			margin-left: 110px;
-			font: 15px Arial;
+			font: 13px Arial;
 			color: #686c6a;
 			font-weight: bolder;
 		}
@@ -456,7 +457,7 @@ body{
 			height: 50px;
 			width: 600px;
 			margin: 5px;
-			background: url("../images/background_comment_meta.png") repeat-x 6px left; 
+			background: url('../images/background_comment_meta.png') repeat-x 0px 6px; 
 			border-bottom: 1px #999 solid;
 			font-size: 11px;
 			font-family: arial;
