@@ -6,7 +6,7 @@ class Post < ActiveRecord::Base
 
   has_many :comments
 
-  scope :ordered,   order(:created_at)
+  scope :ordered,   order("published_at desc")
   scope :blog,      lambda { where("published_at <= ?", Time.zone.now).ordered }
   scope :permalink, lambda { |permalink, admin| admin ? where(:permalink => permalink) : blog.where(:permalink => permalink) }
 end
