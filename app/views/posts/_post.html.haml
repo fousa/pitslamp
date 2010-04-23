@@ -1,6 +1,6 @@
 .post
   %h3
-    = link_to_unless_current post.title, post_path(post.permalink)
+    = link_to_unless_current "#{post.title}", post_path(post.permalink)
     %span.created
       = "#{post.published_at.strftime("%d %B %Y - %H:%M")}"
   %span.comments_count

@@ -1,7 +1,7 @@
 Pitslamp::Application.routes.draw do |map|
   root :to => "site#index"
 
-  resources :posts,     :as => "blog" do
+  resources :posts, :as => "blog" do
     resources :comments
   end
   resources :portfolio, :as => "portfolio"
@@ -14,7 +14,7 @@ Pitslamp::Application.routes.draw do |map|
     resource  :home_page, :controller => "home_page", :as => "homepage"
 
     resources :pages
-    resources :posts,    :as => "blog"
+    resources :posts,    :path => "blog"
     resources :pictures, :as => "flickr"
   end
 
