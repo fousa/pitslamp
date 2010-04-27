@@ -8,14 +8,14 @@ Pitslamp::Application.routes.draw do |map|
   resources :contacts,  :path => "contact"
 
   namespace :admin do
-    root :to => "admin/pages#index"
+    # root :to => "admin/pages#index"
 
     resource  :menu,      :controller => "menu"
-    resource  :home_page, :controller => "home_page", :as => "homepage"
+    resource  :home_page, :controller => "home_page"
 
     resources :pages
     resources :posts,    :path => "blog"
-    resources :pictures, :as => "flickr"
+    resources :pictures
   end
 
   match "*url" => "site#show"
