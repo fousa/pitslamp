@@ -1,11 +1,11 @@
 Pitslamp::Application.routes.draw do |map|
   root :to => "site#index"
 
-  resources :posts, :as => "blog" do
+  resources :posts, :path => "blog" do
     resources :comments
   end
-  resources :portfolio, :as => "portfolio"
-  resources :contacts,  :as => "contact"
+  resources :portfolio, :path => "portfolio"
+  resources :contacts,  :path => "contact"
 
   namespace :admin do
     root :to => "admin/pages#index"
