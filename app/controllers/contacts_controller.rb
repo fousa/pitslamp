@@ -16,9 +16,7 @@ class ContactsController < ApplicationController
 
     if @contact.valid?
       Mailer.contact_notifier(@contact).deliver
-      @contact = Contact.new
-      flash[:notice] = "Bedankt voor je bericht, het zal zo snel mogelijk behandeld worden."
-      render :action => "new"
+      redirect_to new_contact_path, :notice => "Bedankt voor je bericht, het zal zo snel mogelijk behandeld worden."
     else
       flash[:alert] = "U hebt niet alle verplichte velden ingevuld. E-mail is verplicht."
       render :action => "new"

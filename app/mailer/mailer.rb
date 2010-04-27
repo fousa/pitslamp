@@ -7,7 +7,9 @@ class Mailer < ActionMailer::Base
 
     mail :to      => CONFIG["pitslamp"]["owner_email"],
          :from    => "#{contact.name} <#{contact.email}>",
-         :subject => "[PitsLamp #{CONFIG['pitslamp']['type']}] #{contact.subject}"
+         :subject => "[PitsLamp #{CONFIG['pitslamp']['type']}] #{contact.subject}" do |format|
+        format.text { render "contact" }
+    end
 	end
 
 end
