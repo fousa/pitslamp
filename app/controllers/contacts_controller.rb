@@ -16,7 +16,7 @@ class ContactsController < ApplicationController
 
     if @contact.valid?
       Mailer.contact_notifier(@contact).deliver
-
+      @contact = Contact.new
       flash[:notice] = "Bedankt voor je bericht, het zal zo snel mogelijk behandeld worden."
       render :action => "new"
     else

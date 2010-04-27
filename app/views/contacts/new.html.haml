@@ -10,13 +10,18 @@
 
 %h3 Contact
 %p.description alle velden zijn verplicht
-- form_for @contact, :class => "feedback" do |form|
+- form_for @contact, :url => contacts_path, :class => "feedback" do |form|
   %span.input
     = form.label :email, "E-mail"
     = form.text_field :email
+    
   %span.input
     = form.label :name, "Naam"
     = form.text_field :name
+    
+  %span.input
+    = form.label :phone, "Telefoonnr."
+    = form.text_field :phone
     
   %span.input
     = form.label :subject, "Onderwerp"

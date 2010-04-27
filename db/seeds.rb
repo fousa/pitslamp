@@ -3,42 +3,32 @@ Page.create({ :menu_title            => "home",
               :permalink             => "home",
               :content               => "This is the home page",
               :position              => 1,
-              :handled_by_controller => false,
-              :home_page             => true,
-              :active                => true })
+              :home_page             => true })
 
 Page.create({ :menu_title            => "portfolio",
               :title                 => "My portfolio page",
               :permalink             => "portfolio",
               :position              => 2,
-              :handled_by_controller => true,
-              :home_page             => false,
-              :active                => true })
+              :home_page             => false })
 
 Page.create({ :menu_title            => "about",
               :title                 => "My about page",
               :permalink             => "about",
               :content               => "This is the about page",
               :position              => 3,
-              :handled_by_controller => false,
-              :home_page             => false,
-              :active                => true })
+              :home_page             => false })
 
 Page.create({ :menu_title            => "contact",
               :title                 => "My contact page",
               :permalink             => "contact",
               :position              => 4,
-              :handled_by_controller => true,
-              :home_page             => false,
-              :active                => true })
+              :home_page             => false })
 
 Page.create({ :menu_title            => "blog",
               :title                 => "My blog page",
               :permalink             => "blog",
               :position              => 3,
-              :handled_by_controller => true,
-              :home_page             => false,
-              :active                => true })
+              :home_page             => false })
 
 Post.create({ :title        => "Jelle is awesome",
               :permalink    => "jelle-is-awesome",
