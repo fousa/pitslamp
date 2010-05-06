@@ -3,12 +3,6 @@ begin
   require File.expand_path('../../.bundle/environment', __FILE__)
 rescue LoadError
   require 'rubygems'
-  begin
-    require 'flickraw'
-  rescue
-    FlickRaw.api_key       = 'f153edde5fbe1b7492f52e0559dcc789'
-    FlickRaw.shared_secret = 'abbec6fd4c7aa2a8'
-  end
   require 'bundler'
   Bundler.setup
 
