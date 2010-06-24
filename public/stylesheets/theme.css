@@ -3,6 +3,8 @@
 	http://localhost:3000/stylesheets/theme.css?1271099170
 	http://localhost:3000/stylesheets/theme.css?1271103183
 	http://localhost:3000/stylesheets/theme.css?1271114724
+	http://www.pitslamp-profiel.be/stylesheets/theme.css?1272377285
+	http://www.pitslamp-profiel.be/stylesheets/theme.css?1273193102
 */
 
 @import url('reset.css');
@@ -302,6 +304,10 @@ body{
 			line-height: 17px;
 		}
 		
+		#text_content img.frontpageimg {
+			float: right;
+			margin-left: 30px;
+		}
 		/* @end */
 		
 		/* @group forms */
@@ -345,6 +351,14 @@ body{
 			font-weight: bolder;
 		}
 		
+		#content #content_primary span.tip {
+			margin: 3px 0px;
+			font: 12px Arial;
+			color: #686c6a;
+			font-weight: bolder;
+			text-align: right;
+		}
+		
 		#content #content_primary textarea {
 			background: url('../images/background_textarea.png') no-repeat;
 			border: 0px;
@@ -365,6 +379,7 @@ body{
 		#content #content_primary #datetime #post_published_at_1i {
 			margin-left: 10px;
 		}
+		
 
 		/* @end */
 		

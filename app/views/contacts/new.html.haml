@@ -7,6 +7,15 @@
     var google_conversion_label = \"-ZszCN25tAEQv-CZ7wM\";
     var google_conversion_value = 0;
   %script{ :type => "text/javascript", :src => "http://www.googleadservices.com/pagead/conversion.js" }
+  
+  %script{ :src => "//ah8.facebook.com/js/conversions/tracking.js", :type => "text/javascript" }
+  :javascript
+    try {
+      FB.Insights.impression({
+        'id' : 6002638997583,
+        'h' : 'ac35772c55'
+      });
+    } catch (e) {}
 
 %h3 Contact
 %p.description alle velden zijn verplicht
@@ -34,6 +43,7 @@
   %span.input
     = form.label :spam_check, "vuur is ..."
     = form.text_field :spam_check
+    %span.tip hint: warm
 
   = form.submit "Verzenden"
 
