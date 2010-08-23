@@ -9,7 +9,7 @@
   
   - @posts.each do |post|
     %tr
-      %td= post.title
+      %td= link_to post.title, post_path(post.permalink)
       %td= post.author
       %td= post.published_at.strftime("%d %b %Y - %H:%M")
       %td= link_to 'Edit', edit_admin_post_path(post)

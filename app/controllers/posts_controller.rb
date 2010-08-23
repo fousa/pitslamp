@@ -9,6 +9,8 @@ class PostsController < ApplicationController
     initialize_blog
 
     @post    = Post.permalink(params[:id], admin?).first
+    raise "Blog post not found" if @post.nil?
+    
     @comment = Comment.new
   end
 
